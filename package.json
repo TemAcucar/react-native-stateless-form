@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/danielweinmann/react-native-stateless-form#readme",
   "dependencies": {
-    "prop-types": "^15.6.0"
+    "prop-types": "^15.6.0",
+    "redux-form": "^8.2.6"
   }
 }

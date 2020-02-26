@@ -1,6 +1,29 @@
 import React, { Component } from 'react'
 import { View, Text, TextInput, StyleSheet } from 'react-native'
 import PropTypes from 'prop-types'
+import { Field, reduxForm } from 'redux-form'
+
+const renderInput = ({ input: { onChange, ...restInput }}) => {
+  return <TextInput
+    clearButtonMode='while-editing'
+    underlineColorAndroid='transparent'
+    returnKeyType={ multiline ? 'default' : (nextInput ? 'next' : 'done') }
+    onSubmitEditing={this.handleSubmitEditing.bind(this)}
+    { ...this.props }
+    onFocus={this.handleFocus.bind(this)}
+    onBlur={onBlur}
+    ref='input'
+    value={value}
+    style={[{
+      flex: 1,
+      height: 36,
+      fontSize: 14,
+      backgroundColor: 'white',
+    }, inputStyle]}
+    onChangeText={onChange} 
+    {...restInput} 
+  />
+}
 
 export default class InlineTextInput extends Component {
   componentDidMount() {
@@ -107,23 +130,7 @@ export default class InlineTextInput extends Component {
           >
             {label}
           </Text>
-          <TextInput
-            clearButtonMode='while-editing'
-            underlineColorAndroid='transparent'
-            returnKeyType={ multiline ? 'default' : (nextInput ? 'next' : 'done') }
-            onSubmitEditing={this.handleSubmitEditing.bind(this)}
-            { ...this.props }
-            onFocus={this.handleFocus.bind(this)}
-            onBlur={onBlur}
-            ref='input'
-            value={value}
-            style={[{
-              flex: 1,
-              height: 36,
-              fontSize: 14,
-              backgroundColor: 'white',
-            }, inputStyle]}
-          />
+          <Field { ...this.props } component={renderInput} />
         </View>
         { this.renderMessage() }
       </View>
