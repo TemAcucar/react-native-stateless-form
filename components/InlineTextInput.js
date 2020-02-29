@@ -135,7 +135,7 @@ export default class InlineTextInput extends Component {
             onFocus={this.handleFocus.bind(this)}
             onBlur={onBlur}
             value={value}
-            inheritProps={...this.props}
+            inheritProps={ ...this.props }
             component={renderInput} />
         </View>
         { this.renderMessage() }
