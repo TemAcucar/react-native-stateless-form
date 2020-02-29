@@ -3,8 +3,16 @@ import { View, Text, TextInput, StyleSheet } from 'react-native'
 import PropTypes from 'prop-types'
 import { Field, reduxForm } from 'redux-form'
 
-const renderInput = ({ input: { onChange, ...restInput }}) => {
-  return <TextInput style={styles.input} onChangeText={onChange} {...restInput} />
+const renderInput = ({ input: { onChange, ...restInput }, inputStyle}) => {
+  return <TextInput 
+    style={[{
+      flex: 1,
+      height: 36,
+      fontSize: 14,
+      backgroundColor: 'white',
+    }, inputStyle]}
+    onChangeText={onChange} 
+    {...restInput} />
 }
 
 export default class InlineTextInput extends Component {
@@ -112,7 +120,7 @@ export default class InlineTextInput extends Component {
           >
             {label}
           </Text>
-          <Field name={name} component={renderInput} />
+          <Field name={name} inputStyle={inputStyle} component={renderInput} />
         </View>
         { this.renderMessage() }
       </View>
