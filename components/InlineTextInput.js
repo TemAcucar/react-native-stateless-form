@@ -3,23 +3,23 @@ import { View, Text, TextInput, StyleSheet } from 'react-native'
 import PropTypes from 'prop-types'
 import { Field, reduxForm } from 'redux-form'
 
-const renderInput = ({ input: { onChange, ...restInput }}, multiline, nextInput, onBlur, value, handleSubmitEditing, handleFocus, inputStyle) => {
+const renderInput = ({ input: { onChange, ...restInput }}) => {
   return <TextInput
     clearButtonMode='while-editing'
     underlineColorAndroid='transparent'
-    returnKeyType={ multiline ? 'default' : (nextInput ? 'next' : 'done') }
-    onSubmitEditing={handleSubmitEditing}
-    { ...this.props }
-    onFocus={handleFocus}
-    onBlur={onBlur}
+    // returnKeyType={ multiline ? 'default' : (nextInput ? 'next' : 'done') }
+    // onSubmitEditing={handleSubmitEditing}
+    // { ...this.props }
+    // onFocus={handleFocus}
+    // onBlur={onBlur}
     ref='input'
-    value={value}
-    style={[{
-      flex: 1,
-      height: 36,
-      fontSize: 14,
-      backgroundColor: 'white',
-    }, inputStyle]}
+    // value={value}
+    // style={[{
+    //   flex: 1,
+    //   height: 36,
+    //   fontSize: 14,
+    //   backgroundColor: 'white',
+    // }, inputStyle]}
     onChangeText={onChange} 
     {...restInput} 
   />
@@ -133,13 +133,13 @@ export default class InlineTextInput extends Component {
           <Field 
             name={name} 
             component={renderInput} 
-            multiline={multiline}
-            nextInput={nextInput}
-            onBlur={onBlur}
-            value={value}
-            handleSubmitEditing={this.handleSubmitEditing.bind(this)}
-            handleFocus={this.handleFocus.bind(this)}
-            inputStyle={inputStyle}
+            // multiline={multiline}
+            // nextInput={nextInput}
+            // onBlur={onBlur}
+            // value={value}
+            // handleSubmitEditing={this.handleSubmitEditing.bind(this)}
+            // handleFocus={this.handleFocus.bind(this)}
+            // inputStyle={inputStyle}
           />
         </View>
         { this.renderMessage() }
