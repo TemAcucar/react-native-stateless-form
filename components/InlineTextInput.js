@@ -137,8 +137,8 @@ export default class InlineTextInput extends Component {
             nextInput={nextInput}
             onBlur={onBlur}
             value={value}
-            handleSubmitEditing={handleSubmitEditing}
-            handleFocus={handleFocus}
+            handleSubmitEditing={this.handleSubmitEditing.bind(this)}
+            handleFocus={this.handleFocus.bind(this)}
             inputStyle={inputStyle}
           />
         </View>
