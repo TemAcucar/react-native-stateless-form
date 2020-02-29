@@ -9,6 +9,7 @@ const renderInput = ({ input: { onChange, ...restInput }, inputStyle, multiline,
     onSubmitEditing={onSubmitEditing}
     onFocus={onFocus}
     onBlur={onBlur}
+    ref='input'
     style={[{
       flex: 1,
       height: 36,
