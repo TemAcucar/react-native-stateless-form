@@ -3,8 +3,9 @@ import { View, Text, TextInput, StyleSheet } from 'react-native'
 import PropTypes from 'prop-types'
 import { Field, reduxForm } from 'redux-form'
 
-const renderInput = ({ input: { onChange, ...restInput }, inputStyle}) => {
+const renderInput = ({ input: { onChange, ...restInput }, inputStyle, multiline, nextInput}) => {
   return <TextInput 
+    returnKeyType={ multiline ? 'default' : (nextInput ? 'next' : 'done') }
     style={[{
       flex: 1,
       height: 36,
@@ -120,7 +121,12 @@ export default class InlineTextInput extends Component {
           >
             {label}
           </Text>
-          <Field name={name} inputStyle={inputStyle} component={renderInput} />
+          <Field 
+            name={name} 
+            inputStyle={inputStyle} 
+            multiline={multiline}
+            nextInput={nextInput}
+            component={renderInput} />
         </View>
         { this.renderMessage() }
       </View>
