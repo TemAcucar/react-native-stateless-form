@@ -40,7 +40,7 @@ export default class InlineTextInput extends Component {
   }
 
   blur() {
-    this.refs.input.blur()
+    // this.refs.input.blur()
   }
 
   shouldDisplayMessage() {
