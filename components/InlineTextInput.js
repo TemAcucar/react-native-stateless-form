@@ -36,7 +36,7 @@ export default class InlineTextInput extends Component {
   }
 
   focus() {
-    this.refs.input.focus()
+    // this.refs.input.focus()
   }
 
   blur() {

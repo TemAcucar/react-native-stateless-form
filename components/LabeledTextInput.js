@@ -17,11 +17,11 @@ export default class LabeledTextInput extends Component {
   }
 
   focus() {
-    this.refs.input.focus()
+    // this.refs.input.focus()
   }
 
   blur() {
-    this.refs.input.blur()
+    // this.refs.input.blur()
   }
 
   shouldDisplayMessage() {
