@@ -36,11 +36,13 @@ export default class InlineTextInput extends Component {
   }
 
   focus() {
-    // this.refs.input.focus()
+    console.log('InlineTextInput::focus()');
+    this.refs.input.focus()
   }
 
   blur() {
-    // this.refs.input.blur()
+    console.log('InlineTextInput::blur()');
+    this.refs.input.blur()
   }
 
   shouldDisplayMessage() {
